@@ -1,0 +1,151 @@
+.payment-form {
+	width: 705px;
+	padding: 0.75rem 3rem;
+	background: @color-bg;
+
+	&, & * {
+		box-sizing: border-box;
+	}
+
+	&, input {
+		color: @color-light;
+	}
+
+	input {
+		background: none;
+		border: none;
+		color: @color-light;
+
+		&, &:focus {
+			outline: none;
+			// turn off mozilla *:invalid box-shadow
+			box-shadow: none;
+			// ---
+		}
+	}
+
+	.smart-form__field-placeholder {
+		color: @color-muted;
+	}
+	::-webkit-input-placeholder {
+		color: @color-muted;
+	}
+	::-moz-placeholder {
+		color: @color-muted;
+	}
+	:-moz-placeholder {
+		color: @color-muted;
+	}
+	:-ms-input-placeholder {
+		color: @color-muted;
+	}
+
+	input, .smart-form__field-placeholder {
+		// IE9 input invisible cursor fix
+		padding: 0 1px 0 0;
+		// ---
+		height: 2.8rem;
+		line-height: 1;
+		font-size: 2.8rem;
+		font-weight: 100;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 1.25rem;
+	}
+
+	&__group {
+		text-align: center;
+	}
+
+	&__field {
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+
+		&--phone {
+			input[name=phone_code] {
+				width: 4.8rem;
+			}
+
+			input[name=country_code] {
+				width: 3.2rem;
+			}
+
+			input[name=phone_number] {
+				width: 15.3rem;
+			}
+		}
+		&--sum {
+			input {
+				width: 7rem;
+				margin-left: 4rem;
+			}
+			.smart-form__field-wrap, input {
+				margin-left: 4rem;
+			}
+			.smart-form__field-wrap > input {
+				margin-left: 0;
+			}
+			.smart-form__field-placeholder, input {
+				text-align: right;
+			}
+		}
+		&--sum &-postfix {
+			// to prevent shaking on text changing
+			display: inline-block;
+			width: 6.5rem;
+			// ---
+		}
+	}
+
+	&__field-postfix {
+		margin-left: 1rem;
+		font-size: 2rem;
+		font-weight: 100;
+	}
+
+	&__combo-field { }
+
+	&__combo-separator {
+		display: inline-block;
+		width: 2px;
+		height: 2.5rem;
+		margin: 0 1rem;
+		background: white;
+	}
+
+	input,
+	&__field-postfix,
+	&__combo-separator {
+		vertical-align: middle;
+	}
+
+	[type=number]::-webkit-outer-spin-button,
+	[type=number]::-webkit-inner-spin-button {
+    	-webkit-appearance: none;
+    	margin: 0;
+	}
+
+	[type=submit] {
+		display: block;
+		padding: 0.5rem 1.5rem;
+		margin: 0 auto;
+		border: none;
+		background: white;
+		color: #00B285;
+		cursor: pointer;
+		transition: background 0.4s;
+
+		&[disabled] {
+			background: @color-muted;
+			cursor: default;
+		}
+	}
+
+	&__group + &__group,
+	&__group + [type=submit] {
+		margin-top: 2.5rem;
+	}
+}

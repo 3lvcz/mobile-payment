@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<form class="payment-form">
+		<div class="payment-form__group">
+			<div class="payment-form__field payment-form__field--phone">
+				<label for="phone_field">Номер телефона</label>
+				<div id="phone_field" class="payment-form__combo-field">
+					<input type="text" name="country_code" value="+7" readonly>
+					<span class="payment-form__combo-separator"></span>
+					<input type="text" name="phone_code" placeholder="123" required autofocus>
+					<span class="payment-form__combo-separator"></span>
+					<input type="text" name="phone_number" placeholder="345-67-89" required>
+				</div>
+			</div>
+			<div class="payment-form__field payment-form__field--sum">
+				<label for="sum_field">Сумма пополнения</label>
+				<div class="payment-form__combo-field">
+					<input id="sum_field" type="text" name="sum" placeholder="0" required>
+					<span id="sum_field_postfix" class="payment-form__field-postfix">рублей</span>
+				</div>
+			</div>
+		</div>
+		<button id="submit" type="submit" disabled>Продолжить</button>
+	</form>
+	<script src="assets/script.js"></script>
+</body>
+</html>
